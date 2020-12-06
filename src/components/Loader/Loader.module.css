@@ -1,0 +1,28 @@
+.fullscreen-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #f57b51;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.loadIcon {
+  margin: auto;
+  color: #a7401d;
+}
+.loadText {
+  font-size: 1.3rem;
+  color: #a7401d;
+}

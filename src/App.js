@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getSummary } from './api';
-import { MainPage, SecondPage } from './pages';
+import { MainPage, SecondPage } from './components/pages';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Loader } from './components';
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,6 +24,8 @@ function App() {
         fetchStats();
       }, 1500);
   }, [loading]);
+
+  if (loading) return <Loader />;
 
   return (
     <>
