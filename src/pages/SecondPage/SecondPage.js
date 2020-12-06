@@ -1,5 +1,6 @@
 import React from 'react';
 
-export const SecondPage = () => {
+const SecondPage = () => {
   return <div>SecondPage</div>;
 };
+export default SecondPage;

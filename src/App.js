@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getSummary } from './api';
 import { MainPage, SecondPage } from './pages';
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
