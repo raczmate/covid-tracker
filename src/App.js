@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { getSummary } from './api';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      await getSummary().then((data) => {
+        if (data.error) {
+          throw Error('Sikertelen api hívás');
+        } else {
+          setData(data);
+          console.log(data);
+        }
+        setLoading(false);
+      });
+    };
+    if (!data || loading)
+      setTimeout(() => {
+        fetchStats();
+      }, 1500);
+  }, [loading]);
+
+  return <div></div>;
 }
 
 export default App;
