@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import StatContext from './context/statContext';
+
 import { getSummary } from './api';
 import { MainPage, SecondPage } from './components/pages';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Loader } from './components';
+import { Loader, Header } from './components';
+import { Container } from 'react-bootstrap';
+
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -29,13 +33,18 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={MainPage}></Route>
-          <Route exact path="/countries" component={SecondPage}></Route>
-          <Route path="*" component={MainPage} />
-        </Switch>
-      </Router>
+      <StatContext.Provider value={data}>
+        <Router>
+          <Header refreshData={() => setLoading(true)} />
+          <Container fluid>
+            <Switch>
+              <Route exact path="/" component={MainPage} />
+              <Route exact path="/countries" component={SecondPage} />
+              <Route path="*" component={MainPage} />
+            </Switch>
+          </Container>
+        </Router>
+      </StatContext.Provider>
     </>
   );
 }
