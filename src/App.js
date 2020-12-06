@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import StatContext from './context/statContext';
-
-import { getSummary } from './api';
+import { getSummary, getCountry } from './api';
 import { MainPage, SecondPage } from './components/pages';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Loader, Header } from './components';
@@ -18,7 +17,6 @@ function App() {
           throw Error('Sikertelen api hívás');
         } else {
           setData(data);
-          // console.log(data);
         }
         setLoading(false);
       });
@@ -28,7 +26,20 @@ function App() {
         fetchStats();
       }, 1500);
   }, [loading]);
+  useEffect(() => {
+    const fetchLocation = async () => {
+      await getCountry().then((data) => {
+        if (!data.error) {
+          localStorage.setItem('preferredCountry', data.country);
+          console.log(localStorage.getItem('preferredCountry'));
+        } else {
+          console.log('Sikertelen lokáció lekérés...');
+        }
+      });
+    };
 
+    if (!localStorage.getItem('preferredCountry')) fetchLocation();
+  }, []);
   if (loading) return <Loader />;
 
   return (

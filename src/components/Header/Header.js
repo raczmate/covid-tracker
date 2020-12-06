@@ -1,15 +1,12 @@
 import React from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { useStats } from '../../context/statContext';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function Header({ refreshData }) {
   const { Date: apiDate } = useStats();
   let formattedDate = new Date(apiDate).toISOString().substring(0, 10);
-
-  console.log(apiDate);
 
   return (
     <>
