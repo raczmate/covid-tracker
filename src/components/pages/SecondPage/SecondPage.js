@@ -14,6 +14,7 @@ const SecondPage = () => {
         removeCountry={(country) =>
           dispatch({ type: 'REMOVE', payload: country })
         }
+        selected={selected}
       />
     </div>
   );
