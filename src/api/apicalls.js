@@ -8,10 +8,7 @@ export const getSummary = async () => {
 };
 
 export const getCountry = async () => {
-  const API_KEY = 'a30258dbabc97253513d724c2ace826f';
-  const locResponse = await locationInstance.get(
-    `/check?access_key=${API_KEY}`
-  );
-  const { country_name: country } = locResponse.data;
+  const locResponse = await locationInstance.get();
+  const { country } = locResponse.data;
   return { country };
 };

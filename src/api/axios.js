@@ -14,5 +14,5 @@ export const covidInstance = axios.create({
 });
 
 export const locationInstance = axios.create({
-  baseURL: 'http://api.ipstack.com/',
+  baseURL: 'https://ipwhois.app/json/',
 });
