@@ -1,6 +1,6 @@
 {
   "name": "covid-tracker",
-  "homepage": "https://raczmate.github.io/covid-tracker",
+  "homepage": "https://raczmate.io/covid-tracker",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
