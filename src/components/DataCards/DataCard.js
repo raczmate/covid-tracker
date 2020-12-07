@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Image } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './DataCard.module.css';
@@ -50,8 +50,7 @@ function DataCard({ data }) {
         padding: data.padding ?? '0.5rem',
         borderRadius: '0.5rem',
         marginTop: data.topMargin ?? '2rem',
-        backgroundImage: data.bgImage ? `url(${data.bgImage}` : 'none',
-        backgroundSize: 'contain',
+
         backgroundRepeat: 'no-repeat',
         marginBottom: data.bottomMargin ?? '0.5rem',
       }}
@@ -59,6 +58,15 @@ function DataCard({ data }) {
         styles['covid-card']
       }`}
     >
+      <Image
+        className={styles['bg-image']}
+        src={data.bgImage}
+        styles={{
+          position: 'absolute',
+          width: '100%',
+          height: ' 100%',
+        }}
+      ></Image>
       {!data.Component && (
         <Card.Body>
           {data.title && <Card.Title>{data.title}</Card.Title>}

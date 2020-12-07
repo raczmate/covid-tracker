@@ -20,8 +20,12 @@
   background-color: #000000;
   border: 2px solid #555555;
 }
+.dropdown-toggle {
+  width: 80%;
+}
 
 .dropdown-menu.show {
   max-height: 300px !important;
+  width: 80% !important;
   overflow-y: scroll !important;
 }
