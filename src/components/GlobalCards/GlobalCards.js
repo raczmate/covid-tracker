@@ -3,10 +3,8 @@ import { DataCard } from '../index';
 import { Row, Col } from 'react-bootstrap';
 import { useStats } from '../../context/statContext';
 import { numFormatter } from '../../utils';
-
 export function GlobalCards() {
   const { Global } = useStats();
-  //console.log({ Global });
   return (
     <>
       <h1 className="display-4 text-center text-md-left">Globális adatok</h1>

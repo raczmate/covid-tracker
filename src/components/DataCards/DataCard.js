@@ -63,8 +63,6 @@ function DataCard({ data }) {
         src={data.bgImage}
         styles={{
           position: 'absolute',
-          width: '100%',
-          height: ' 100%',
         }}
       ></Image>
       {!data.Component && (
@@ -90,6 +88,7 @@ function DataCard({ data }) {
             }}
           >
             {data.body}
+            {console.log(data.body)}
           </Card.Text>
           {data.icon && (
             <Card.Text style={{ float: 'right', textShadow: '0 0 2px white' }}>

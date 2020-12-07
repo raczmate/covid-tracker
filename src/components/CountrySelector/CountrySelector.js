@@ -3,7 +3,6 @@ import { useStats } from '../../context/statContext';
 import { Dropdown } from 'react-bootstrap';
 import { CountryCards } from '../../components';
 import { Row, Col } from 'react-bootstrap';
-
 const CountrySelector = ({ addCountry, removeCountry, selected }) => {
   const { Countries } = useStats();
   Countries.map((country) => country.Country);
@@ -26,8 +25,10 @@ const CountrySelector = ({ addCountry, removeCountry, selected }) => {
                       ? () => removeCountry(country)
                       : () => addCountry(country)
                   }
-                  styles={{
-                    color: selected.includes(country) ? 'red' : 'none',
+                  style={{
+                    backgroundColor: selected.includes(country)
+                      ? 'LightSlateGrey'
+                      : 'white',
                   }}
                 >
                   {country.Country}
@@ -37,6 +38,7 @@ const CountrySelector = ({ addCountry, removeCountry, selected }) => {
           </Dropdown>
         </Col>
       </Row>
+
       {selected.map((country) => (
         <CountryCards country={country} key={country.Country} />
       ))}
