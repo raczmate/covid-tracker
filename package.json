@@ -1,6 +1,6 @@
 {
   "name": "covid-tracker",
-  "homepage": "raczmate.covid",
+  "homepage": "http://raczmate.covid/covid-tracker",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
