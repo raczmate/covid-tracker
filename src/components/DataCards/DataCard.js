@@ -52,6 +52,7 @@ function DataCard({ data }) {
         marginTop: data.topMargin ?? '2rem',
         backgroundImage: data.bgImage ? `url(${data.bgImage}` : 'none',
         backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
         marginBottom: data.bottomMargin ?? '0.5rem',
       }}
       className={`${data.withShadow ? styles['card-shadow'] : ''} ${

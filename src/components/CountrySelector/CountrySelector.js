@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStats } from '../../context/statContext';
 import { Dropdown } from 'react-bootstrap';
+import { CountryCards } from '../../components';
 const CountrySelector = ({ addCountry, removeCountry, selected }) => {
   const { Countries } = useStats();
   Countries.map((country) => country.Country);
@@ -29,6 +30,9 @@ const CountrySelector = ({ addCountry, removeCountry, selected }) => {
           <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
+      {selected.map((country) => (
+        <CountryCards country={country} key={country.Country} />
+      ))}
     </>
   );
 };
