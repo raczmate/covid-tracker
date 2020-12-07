@@ -3,7 +3,7 @@ import { DataCard } from '../index';
 import { Row, Col } from 'react-bootstrap';
 import { numFormatter } from '../../utils';
 
-export function CountryCard({ country }) {
+function CountryCard({ country }) {
   const code = country.CountryCode.toLowerCase();
 
   return (
