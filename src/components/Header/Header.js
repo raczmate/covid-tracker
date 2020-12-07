@@ -12,7 +12,9 @@ function Header({ refreshData }) {
   return (
     <>
       <Navbar bg="dark" variant="dark" sticky="top">
-        <Navbar.Brand href="#">Covid-tracker</Navbar.Brand>
+        <Navbar.Brand href="#" as={Link} to={{ pathname: '/' }}>
+          Covid-tracker
+        </Navbar.Brand>
         <Button
           variant="dark"
           style={{ alignSelf: 'center' }}

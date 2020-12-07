@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { CountrySelector } from '../../../components';
 import { countriesList, countryReducer } from '../../../reducer/countryReducer';
 import { useReducer } from 'react';
@@ -8,7 +7,6 @@ const SecondPage = () => {
 
   return (
     <div>
-      <Link to="/">Vissza a főoldalra</Link>
       <CountrySelector
         addCountry={(country) => dispatch({ type: 'ADD', payload: country })}
         removeCountry={(country) =>
