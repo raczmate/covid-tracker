@@ -1,2 +1,2 @@
-export { getSummary } from "./apicalls";
-export { getCountry } from "./apicalls";
+export { getSummary } from './apicalls';
+export { getCountry } from './apicalls';

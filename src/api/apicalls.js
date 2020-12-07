@@ -1,4 +1,3 @@
-import { countries } from '../utils';
 import { covidInstance, locationInstance } from './axios';
 
 export const getSummary = async () => {
