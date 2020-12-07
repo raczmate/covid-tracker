@@ -88,7 +88,6 @@ function DataCard({ data }) {
             }}
           >
             {data.body}
-            {console.log(data.body)}
           </Card.Text>
           {data.icon && (
             <Card.Text style={{ float: 'right', textShadow: '0 0 2px white' }}>

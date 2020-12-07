@@ -18,5 +18,5 @@ export const covidInstance = axios.create({
 });
 
 export const locationInstance = axios.create({
-  baseURL: 'http://ip-api.com/json',
+  baseURL: 'https://api.ipify.org',
 });
