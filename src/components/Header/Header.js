@@ -3,6 +3,7 @@ import { Navbar, Nav, Button } from 'react-bootstrap';
 import { useStats } from '../../context/statContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Header({ refreshData }) {
   const { Date: apiDate } = useStats();
@@ -12,6 +13,17 @@ function Header({ refreshData }) {
     <>
       <Navbar bg="dark" variant="dark" sticky="top">
         <Navbar.Brand href="#">Covid-tracker</Navbar.Brand>
+        <Button
+          variant="dark"
+          style={{ alignSelf: 'center' }}
+          as={Link}
+          to={{ pathname: '/countries' }}
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          Országok
+        </Button>
         <Nav style={{ marginLeft: 'auto' }}>
           <Nav.Link as="li" style={{ alignSelf: 'center' }}>
             Utolsó API frissítés dátuma: {formattedDate}
