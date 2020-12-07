@@ -1,4 +1,4 @@
-import { covidInstance, locationInstance } from './axios';
+import { covidInstance, ipInstance, locationInstance } from './axios';
 
 export const getSummary = async () => {
   const response = await covidInstance.get('/summary');
@@ -8,7 +8,10 @@ export const getSummary = async () => {
 };
 
 export const getCountry = async () => {
-  const locResponse = await locationInstance.get();
+  const response = await (await ipInstance.get()).data;
+  const { ip } = response;
+
+  const locResponse = await locationInstance.get(`/${ip}`);
   const { country } = locResponse.data;
   return { country };
 };

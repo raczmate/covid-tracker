@@ -31,7 +31,6 @@ function App() {
       await getCountry().then((data) => {
         if (!data.error) {
           localStorage.setItem('preferredCountry', data.country);
-          console.log(localStorage.getItem('preferredCountry'));
         } else {
           console.log('Sikertelen lokáció lekérés...');
         }
