@@ -1,9 +1,15 @@
 import React from 'react';
 import { useStats } from '../../context/statContext';
-import { Dropdown } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 import { CountryCards } from '../../components';
 import { Row, Col } from 'react-bootstrap';
-const CountrySelector = ({ addCountry, removeCountry, selected }) => {
+
+const CountrySelector = ({
+  addCountry,
+  removeCountry,
+  selected,
+  resetCountry,
+}) => {
   const { Countries } = useStats();
   Countries.map((country) => country.Country);
 
@@ -15,8 +21,15 @@ const CountrySelector = ({ addCountry, removeCountry, selected }) => {
             <Dropdown.Toggle variant="info" id="dropdown-basic">
               Ország kiválasztása
             </Dropdown.Toggle>
-
             <Dropdown.Menu>
+              <Dropdown.Item>
+                <Button onClick={resetCountry} variant="secondary">
+                  Alaphelyzetbe állítás
+                </Button>
+                <Dropdown.Item></Dropdown.Item>
+
+                <Dropdown.Divider />
+              </Dropdown.Item>
               {Countries.map((country) => (
                 <Dropdown.Item
                   key={country.Country}
@@ -27,7 +40,7 @@ const CountrySelector = ({ addCountry, removeCountry, selected }) => {
                   }
                   style={{
                     backgroundColor: selected.includes(country)
-                      ? 'LightSlateGrey'
+                      ? 'orange'
                       : 'white',
                   }}
                 >

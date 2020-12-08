@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const countriesList = [];
-
 export function countryReducer(state, action) {
   switch (action.type) {
     case 'ADD': {
@@ -18,8 +17,7 @@ export function countryReducer(state, action) {
       return [...state];
     }
     case 'RESET': {
-      state.length = 0;
-      return [...state];
+      return countriesList;
     }
     default: {
       throw new Error(`Helytelen művelet!`);
