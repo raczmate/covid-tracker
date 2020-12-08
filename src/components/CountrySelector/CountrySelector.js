@@ -23,7 +23,11 @@ const CountrySelector = ({
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item>
-                <Button onClick={resetCountry} variant="secondary">
+                <Button
+                  onClick={resetCountry}
+                  variant="outline-secondary"
+                  block
+                >
                   Alaphelyzetbe állítás
                 </Button>
                 <Dropdown.Item></Dropdown.Item>
