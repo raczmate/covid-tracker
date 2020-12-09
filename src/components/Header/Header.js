@@ -4,6 +4,7 @@ import { useStats } from '../../context/statContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import { faVirus } from '@fortawesome/free-solid-svg-icons';
 
 function Header({ refreshData }) {
   const { Date: apiDate } = useStats();
@@ -13,6 +14,11 @@ function Header({ refreshData }) {
     <>
       <Navbar bg="dark" variant="dark" sticky="top">
         <Navbar.Brand href="#" as={Link} to={{ pathname: '/' }}>
+          <FontAwesomeIcon
+            icon={faVirus}
+            size="2x"
+            style={{ color: '#ff3860' }}
+          ></FontAwesomeIcon>
           Covid-tracker
         </Navbar.Brand>
         <Button
